@@ -24,7 +24,7 @@ st.title("🚨 QUEST: Quezon City Evacuation Support Tool")
 def recommend_departure(distance_km):
     if distance_km is None:
         return ""
-    mins = (distance_km / 5.0) * 60.0
+    mins = (distance_km / 5.0) * 60.0 #assumes an average walking speed of 5 km/h
     if mins <= 10:
         return "Leave immediately if safe to do so."
     elif mins <= 30:
