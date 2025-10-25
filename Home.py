@@ -20,11 +20,8 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="QUEST", layout="wide")
 st.title("🚨 QUEST: Quezon City Evacuation Support Tool")
 
-# -------------------------
-# Small helper functions
-# -------------------------
+
 def recommend_departure(distance_km):
-    """Very simple recommended departure message based on walking time (5 km/h)."""
     if distance_km is None:
         return ""
     mins = (distance_km / 5.0) * 60.0
@@ -35,9 +32,7 @@ def recommend_departure(distance_km):
     else:
         return "Start moving now — this is a long walk."
 
-# -------------------------
-# Notebook loader (fallback)
-# -------------------------
+
 def load_module_from_notebook(nb_path: Path, module_name: str = "routing_nb"):
     """
     Execute code cells of a notebook into a fresh module and return it.
